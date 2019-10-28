@@ -16,7 +16,6 @@ import dao.UserDao;
 public class HomeController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private Connection con;
 
 	@Override
 	public void init() throws ServletException {
@@ -63,6 +62,41 @@ public class HomeController extends HttpServlet {
 
 				System.out.println(action);
 			}
+		}
+		
+		if("Cadastrar".equals(action)) {
+			UserDao dao = new UserDao();
+			try {
+				req.setAttribute("countQuestionario", dao.getQuestionaryCount()+1);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			req.getRequestDispatcher("/WEB-INF/jsp/cadastrar.jsp").forward(req, resp);
+			
+		}
+		
+		if("Salvar Pergunta".equals(action)) {
+			boolean criado = false;
+			UserDao dao = new UserDao();
+			for(int i = 1; i <= 4; i++) {
+				String pergunta = req.getParameter("pergunta"+i);
+				String resposta1 = req.getParameter("resposta"+i+"1");
+				String resposta2 = req.getParameter("resposta"+i+"2");
+				String resposta3 = req.getParameter("resposta"+i+"3");
+				String resposta4 = req.getParameter("resposta"+i+"4");
+				int correta = Integer.parseInt(req.getParameter("perg"+i));	
+				int questionarioId = Integer.parseInt(req.getParameter("questionarioId"));
+
+				try {
+					dao.saveQuestion(criado, pergunta, resposta1, resposta2, resposta3, resposta4, correta, questionarioId);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				criado = true;
+			}
+			req.getRequestDispatcher("/WEB-INF/jsp/professor.jsp").forward(req, resp);
 		}
 	}
 }

@@ -4,17 +4,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/index.css" />
 <meta charset="ISO-8859-1">
 <title>Index Page</title>
 </head>
 <body>
-	<form action="HomeController" method="post">
-		<label for="usuario">Usuário: </label> <input type="text"
-			placeholder="usuario" name="usuario"> <label for="senha">Senha:
-		</label> <input type="password" placeholder="senha" name="senha"> <input
-			type="submit" value="Logar" name="button" >
-	</form>
+	
+		<form action="HomeController" method="post">
+			
+					<label for="usuario">USERNAME</label> 
+					<input	type="text" name="usuario"/>
+				
+					<label for="senha">PASSWORD</label> 
+					<input type="password" name="senha"/>
+				
+					<input type="submit" value="Logar" name="button" />		
+		</form>
+	
 	<label>${error}</label>
+
+
+	
 </body>
 </html>
 
