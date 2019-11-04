@@ -10,22 +10,23 @@
 <title>Index Page</title>
 </head>
 <body>
-	
+	<div class="login">
 		<form action="HomeController" method="post">
-			
-					<label for="usuario">USERNAME</label> 
-					<input	type="text" name="usuario"/>
-				
-					<label for="senha">PASSWORD</label> 
-					<input type="password" name="senha"/>
-				
-					<input type="submit" value="Logar" name="button" />		
+
+			<div>
+				<input type="text" name="usuario" id="username" placeholder="Usuario"/>
+			</div>
+			<div>
+				<input type="password" name="senha" id="password" placeholder="Senha"/>
+			</div>
+			<div class="button">
+				<input type="submit" value="Logar" name="button" />
+			</div>
 		</form>
-	
-	<label>${error}</label>
 
-
-	
+		<p class="error">${error}</p>
+	</div>
+	<div class="shadow"></div>
 </body>
 </html>
 
