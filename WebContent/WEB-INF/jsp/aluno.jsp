@@ -9,19 +9,21 @@
 <title>Aluno Page</title>
 </head>
 <body>
-	<h1>AlUNO</h1>
-	<h1>${contextPath}</h1>
 
+	<div class="container">
+		<p>Insira o ID de um Questionário</p>
+		<form class="formId" action="HomeController" method="post">
+			<input class="inputId" name="questionarioId" type="text" />
 
+			<div>
+				<input class="irQuestionario" name="button" value="Ir ao questionario" type="submit" />
+			</div>
+		</form>
 
-
-	<form action="HomeController" method="post">
-		<input name="questionarioId" type="text" /> <input name="button"
-			value="Ir ao questionario" type="submit" />
-	</form>
-
-	<form action="HomeController" method="post">
-		<input name="button" value="Deslogar" type="submit" />
-	</form>
+		<form action="HomeController" method="post">
+			<input class="btnDeslogar" name="button" value="Deslogar"
+				type="submit" />
+		</form>
+	</div>
 </body>
 </html>

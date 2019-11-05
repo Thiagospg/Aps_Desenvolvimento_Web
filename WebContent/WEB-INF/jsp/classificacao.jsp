@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="${pageContext.request.contextPath}/css/classificacao.css"
+	rel="stylesheet" type="text/css" />
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -20,7 +22,7 @@
 
 	<c:if test="${not empty usuariosPontuacao}">
 		<table border="1">
-			<tr>
+			<tr class="header">
 				<td><span>Usuário</span></td>
 				<td><span>Pontuação</span></td>
 			</tr>
@@ -30,7 +32,7 @@
 				<tr>
 					<td>${usuarioPontuacao}</td>
 
-					<td>${pontosPontuacao[status.index]}</td>
+					<td class="pontos">${pontosPontuacao[status.index]}</td>
 				</tr>
 
 			</c:forEach>

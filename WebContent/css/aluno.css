@@ -1,4 +1,80 @@
-h1{
-	
-	color: blue;
+body {
+	background: #eceeee;
+}
+
+.container {
+	margin: auto;
+	width: 50%;
+	margin-top: 100px;
+}
+
+.container form {
+	margin: auto;
+	width: 50%;
+}
+
+.container p {
+	margin: auto;
+	font-size: 35px;
+	font-weight: 600;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	text-transform: uppercase;
+	color: #37a69b;
+	text-align: center;
+}
+
+form {
+	margin-top: 60px;
+	text-align: -webkit-center;
+}
+
+.inputId {
+	width: 100%;
+	height: 42px;
+	margin-top: 40px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: #37a69b;
+	border-width: 2px;
+	border-style: dashed;
+}
+
+.btnDeslogar {
+	margin-top: 80px;
+}
+
+.irQuestionario {
+	margin-top: 20px;
+}
+
+.forgot:hover {
+	color: #3b3b3b
+}
+
+input[type="submit"] {
+	width: 100%;
+	height: 85px;
+	display: block;
+	font-family: Arial, "Helvetica", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 1px 1px 0px #37a69b;
+	padding-top: 6px;
+	margin: 29px 0 0 0;
+	position: relative;
+	cursor: pointer;
+	border: none;
+	background-color: #37a69b;
+	background-image: linear-gradient(top, #3db0a6, #3111);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px
+		5px #999;
 }

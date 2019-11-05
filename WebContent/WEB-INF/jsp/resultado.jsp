@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,17 +9,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<p id="idQuestionario">Id do questionario: ${questionarioId}</p>
-		<p id="usuario">Seu usuario: ${usuario}</p>
-		<p id="pontuacao">Sua pontuacao: ${pontuacao}</p>
-	</div>
-	
-	<div>
+	<div class="container">
+		<p>Id do questionario: <span class="resultado">${questionarioId}</span></p>
+		<p>Seu usuario: <span class="resultado">${usuario}</span></p>
+		<p>Sua pontuacao: <span class="resultado">${pontuacao}</span></p>
+
 		<form action="HomeController" method="post">
 			<input type="submit" name="button" value="Voltar" />
 		</form>
-	
 	</div>
+
+
+
 </body>
 </html>

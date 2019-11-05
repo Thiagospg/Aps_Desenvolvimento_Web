@@ -1,0 +1,42 @@
+body{
+	
+	background: #eceeee;
+}
+
+table {
+	margin: auto;
+	width: 25%;
+	margin-top: 5%;
+	border-width: 13px;
+}
+
+td {
+	border-color: #37a69b;
+	border-width: 2px;
+}
+
+.idQuestionario, tr {
+	text-align: center;
+	font-weight: 600;
+}
+
+input[type="submit"] {
+	position: relative;
+	cursor: pointer;
+	border: none;
+	text-align: center;
+	height: 20px;
+	background-color: #FFFFFF;
+	width: 100%;
+	display: block;
+	font-family: Arial, "Helvetica", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #37a69b;
+	text-decoration: none;
+}
+
+input[type="submit"]:hover {
+	background-color: #37a69b;
+	color: #FFFFFF;
+}

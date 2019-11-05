@@ -12,9 +12,9 @@
 <body>
 
 	<div id="container">
-		<div>
+		<div class="tituloId">
 			<p>
-				Id do Questionario: <strong>${questionarioId}</strong>
+				Id do Questionario: <span class="id">${questionarioId}</span>
 			</p>
 		</div>
 		
@@ -29,6 +29,8 @@
 			
 			<input type="submit" name="button" value="Enviar Resposta" />
 		</form>
+		
+		<p class="error">${error}</p>
 	</div>
 </body>
 </html>

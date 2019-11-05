@@ -88,8 +88,10 @@ public class HomeController extends HttpServlet {
 		if ("Deslogar".equals(action)) {
 			HttpSession session = req.getSession();
 			session.invalidate();
-
-			req.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(req, resp);
+			resp.setHeader("Cache-Control", "no-cache");
+			resp.setHeader("pragma", "no-cache");
+			resp.setHeader("Expires", "-1");
+			resp.sendRedirect(("HomeController"));
 		}
 
 		if ("Cadastrar".equals(action)) {
@@ -107,6 +109,8 @@ public class HomeController extends HttpServlet {
 		if ("Ir ao questionario".equals(action)) {
 			UserDao dao = new UserDao();
 			int questionarioId = Integer.parseInt(req.getParameter("questionarioId"));
+			HttpSession session = req.getSession();
+			session.setAttribute("questionarioId", questionarioId);
 			ResultSet rs = null;
 			questionario = new Questionario();
 			questionario.setId(questionarioId);
@@ -128,7 +132,6 @@ public class HomeController extends HttpServlet {
 			}
 
 			req.setAttribute("questoes", questionario.getQuestoes());
-			req.setAttribute("questionarioId", questionarioId);
 
 			req.getRequestDispatcher("/WEB-INF/jsp/questionario.jsp").forward(req, resp);
 		}
@@ -139,8 +142,16 @@ public class HomeController extends HttpServlet {
 			for (int i = 0; i < questionario.getQuestoes().size(); i++) {
 				String resposta = req.getParameter("resposta" + i);
 
-				if (Integer.parseInt(resposta) == questionario.getQuestao(i).getCorreta()) {
-					total += 1;
+				if (resposta == null) {
+					req.setAttribute("error", "Responda corretamente todas as questões!");
+					req.setAttribute("questoes", questionario.getQuestoes());
+					req.getRequestDispatcher("/WEB-INF/jsp/questionario.jsp").forward(req, resp);
+					return;
+				} else {
+
+					if (Integer.parseInt(resposta) == questionario.getQuestao(i).getCorreta()) {
+						total += 1;
+					}
 				}
 			}
 			System.out.println(total);

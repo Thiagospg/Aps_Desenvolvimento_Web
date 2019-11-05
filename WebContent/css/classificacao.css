@@ -1,0 +1,34 @@
+body{
+	
+	background: #eceeee;
+}
+
+table {
+	margin: auto;
+	width: 25%;
+	margin-top: 5%;
+	border-width: 13px;
+	background-color: #37a69b;
+}
+
+td {
+	border-color: #37a69b;
+	border-width: 2px;
+}
+
+tr {
+	text-align: center;
+	font-weight: 600;
+	background-color: white;
+}
+
+.pontos {
+	font-weight: bold;
+	color: #37a69b;
+}
+
+.header td {
+	background-color: #37a69b;
+}
+
+
