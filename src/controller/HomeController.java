@@ -161,7 +161,15 @@ public class HomeController extends HttpServlet {
 
 			UserDao dao = new UserDao();
 			try {
+				int i = 1;
 				dao.saveScoreOfUser(pontuacao.getPontuacao(), pontuacao.getUsuario(), pontuacao.getQuestionario());
+				ResultSet rs = dao.getCorrectAnswers(questionario.getId());
+
+				while (rs.next()) {
+					req.setAttribute("correta"+i, rs.getInt("correta"));
+					i++;
+				}
+
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

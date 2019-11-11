@@ -107,5 +107,12 @@ public class UserDao {
 		
 	}
 	
+	public ResultSet getCorrectAnswers(int questionarioId) throws SQLException {
+		PreparedStatement stmt = con.prepareStatement("SELECT correta FROM question INNER JOIN questionario ON question.questionario_id = questionario.id WHERE questionario.id = ?");
+		stmt.setInt(1, questionarioId);
+		ResultSet rs = stmt.executeQuery();
+		
+		return rs;
+	}
 
 }

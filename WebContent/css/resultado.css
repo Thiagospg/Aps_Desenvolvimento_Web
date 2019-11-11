@@ -18,7 +18,7 @@ body {
 	font-size: 18px;
 }
 
-.resultado {
+.resultado, .correta {
 	color: red;
 }
 
